@@ -50,7 +50,6 @@ class Solution:
  
     
     
-    
 nums = [2, 7, 11, 15]
 # nums = [3, 2, 3, 4, 5, 8, 4]
 target = 9
