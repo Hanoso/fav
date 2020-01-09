@@ -11,7 +11,7 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 """
 
-
+# 解法一：分类判断，解题思路：https://leetcode-cn.com/problems/two-sum/solution/ben-fang-fa-ifelsetong-guo-ce-shi-by-sheng-wu-shua/
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         l = len(nums) # 列表长度
@@ -36,6 +36,21 @@ class Solution:
                 i += 1
         return None
 
+    
+# 解法二：枚举判断，解题思路：https://leetcode-cn.com/problems/two-sum/solution/mei-ju-sheng-yu-lie-biao-pan-duan-fa-tong-guo-ce-s/
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        nums_list = enumerate(nums)
+        for idx,n in nums_list:
+            if (target - n) in nums[idx+1:]:
+                # print(nums[idx+1:])
+                # print(nums[idx+1:].index(target-n)+idx+1)
+                return [idx,nums[idx+1:].index(target-n)+idx+1]
+        return None
+ 
+    
+    
+    
 nums = [2, 7, 11, 15]
 # nums = [3, 2, 3, 4, 5, 8, 4]
 target = 9
